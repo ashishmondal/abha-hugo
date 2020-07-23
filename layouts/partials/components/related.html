@@ -1,0 +1,19 @@
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ with $related }}
+<h3>See Also</h3>
+<div class="row">
+  {{ range . }}
+  <div class="col-md-4 mb-4">
+    <article class="card">
+      {{ if .Params.Image }}
+      <img src="{{.Site.Params.imageCDN}}w_350,h_256,c_fill/{{ .Params.Image }}" class="card-img-top"
+        alt="{{ .Title | markdownify }}" loading="lazy">
+      {{ end }}
+      <div class="card-body px-0">
+        <a href="{{ .Permalink }}" class="h5 d-block my-3">{{ .Title | markdownify }}</a>
+      </div>
+    </article>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

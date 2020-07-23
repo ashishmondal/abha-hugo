@@ -1,0 +1,10 @@
+<div class="widget">
+  <h4 class="widget-title">Recent Posts</h4>
+  {{ range ( where .Site.RegularPages "Type" "post" ) | first 3 }}
+  <ul>
+    <li class="list-inline-item">
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </li>
+  </ul>
+  {{ end }}
+</div>

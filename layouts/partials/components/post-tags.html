@@ -1,0 +1,5 @@
+<div class="tags-list">
+  {{ range .Params.Tags }}
+  <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}">#{{ . | title | humanize }}</a>
+  {{ end }}
+</div>

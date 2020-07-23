@@ -203,3 +203,124 @@ textarea.form-control{
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover{
   background: $primary-color !important;
 }
+
+// Mailchimp newsletter
+.mailchimp-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.8);
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    overflow: auto;
+}
+
+.indicates-required {
+  text-align: right;
+}
+
+.asterisk {
+  color: $primary-color;
+}
+
+.content__gdpr {
+  border-top: 1px solid $secondary-color;
+  padding-top: 1em;
+}
+
+.gdprRequired, .gdprRequired span {
+  padding-left: 1em;
+}
+
+.content__gdprLegal p {
+  font-size: 0.75em;
+}
+
+.subfield > input {
+  border: 1px solid #ced4da;
+  border-radius: 0;
+}
+
+#mce-responses {
+  .response {
+    border: 1px solid;
+    padding: 1em;
+  }
+
+  #mce-error-response {
+    color: var(--danger);
+    border-color: var(--danger);
+  }
+
+  #mce-success-response {
+    color: var(--success);
+    border-color: var(--success);
+  }
+}
+
+#mc-embedded-subscribe {
+  display: inline-block;
+}
+
+@mixin taxonomy-list($background, $textTransform) {
+  padding-bottom: 1rem;
+
+  a {
+    background: $background;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.75rem;
+    text-transform: $textTransform;
+    display: inline-block;
+  }
+}
+
+.category-list {
+  @include taxonomy-list($primary-color, uppercase);
+}
+
+.tags-list {
+  @include taxonomy-list($secondary-color, lowercase);
+  text-align: end;
+}
+
+.navbar-burger {
+  font-size: 1.5rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    width: 100%;
+}
+
+.img-logo {
+  width: 150px;
+  transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+}
+
+.small-logo {
+  width: 95px;
+}
+
+// privacy
+
+.in-short {
+  font-style: italic;
+  font-size: 1rem;
+
+  ::before {
+    content: 'In Short: ';
+    font-weight: bold;
+  }
+
+  > p {
+    line-height: 1.4;
+  }
+}

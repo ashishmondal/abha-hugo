@@ -1,32 +1,40 @@
 /*  typography */
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500&family=Alegreya:ital@0;1&family=Arya:wght@700&family=Nunito&family=Poppins&display=swap');
 
 body {
   line-height: 1.2;
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
-  font-size: 15px;
+  font-size: 18px;
   color: $text-color;
 }
 
 p, .paragraph {
   font-weight: 400;
   color: $text-color;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.7;
   font-family: $primary-font;
+  text-align: justify;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+  color: $secondary-color;
+  font-family: $secondary-font;
+  line-height: 1.2;
+}
+
+i {
+  font-family: themify;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  color: $text-color-dark;
-  font-family: $primary-font;
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: normal;
 }
 
 a{
   &.h1,&.h2,&.h3,&.h4,&.h5,&.h6{
-    color: $text-color-dark;
+    color: $secondary-color;
   }
 }
 
@@ -52,4 +60,46 @@ h5, .h5{
 
 h6, .h6{
   font-size: 16px;
+}
+
+.hindi {
+  .title {
+    font-family: 'Arya', sans-serif !important;
+  }
+
+  .content {
+    font-family: 'Poppins', sans-serif !important;
+    font-style: normal !important;
+  }
+}
+
+.post-meta {
+  font-family: $meta-font;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+
+  a {
+    color: unset;
+  }
+
+  i {
+    font-size: 1rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  span {
+    white-space: nowrap;
+  }
+
+  >span:not(:last-child)::after {
+    content: "\00B7";
+    font-size: 2rem;
+    position: relative;
+    top: 3px;
+    font-weight: 900;
+    opacity: .5;
+    padding-left: 5px;
+    padding-right: 2px;
+  }
 }

@@ -1,0 +1,29 @@
+{{- $src := .Get "src" -}}
+{{- $cdn := .Site.Params.imageCDN -}}
+{{- $api := getenv "CLOUDINARY_API" -}}
+{{ $meta := getJSON $api $src }}
+
+{{- with .Parent -}}
+
+<a href="{{ $meta.secure_url }}" title="{{$meta.context.custom.caption}}" class="jg-entry-visible">
+  <img alt="{{$meta.context.custom.alt}}" data-src="{{$cdn}}h_200/{{ $src }}" class="lazyload"
+    height="{{ $meta.height }}" width="{{ $meta.width }}" />
+  <div class="jg-caption">
+    {{$meta.context.custom.caption}}
+  </div>
+</a>
+
+{{- else -}}
+
+<picture>
+  <source media="(min-width: 992px)" srcset="{{$cdn}}w_730/{{ $src }} 1x, {{$cdn}}w_730,dpr_2.0/{{ $src }} 2x"
+    type="image/jpeg">
+  <source media=" (min-width: 768px)" srcset="{{$cdn}}w_690/{{ $src }} 1x, {{$cdn}}w_690,dpr_2.0/{{ $src }} 2x"
+    type="image/jpeg">
+  <source media="(max-width: 576px)" srcset="{{$cdn}}w_510/{{ $src }} 1x, {{$cdn}}w_510,dpr_2.0/{{ $src }} 2x"
+    type="image/jpeg">
+  <img class="img-fluid" src="{{$cdn}}w_730/{{ $src }}" type="image/jpeg"
+    alt="{{$meta.context.custom.alt}}" title="{{$meta.context.custom.caption}}">
+</picture>
+
+{{- end }}

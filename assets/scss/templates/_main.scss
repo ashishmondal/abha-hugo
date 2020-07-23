@@ -247,32 +247,49 @@
       margin-bottom: 15px;
       list-style-type: none;
 
-      &::before {
-        position: absolute;
-        content: "\e71b";
-        font-family: $icon-font;
-        font-size: 14px;
-        left: 0;
-        top: 1px;
-        color: $primary-color;
-        transition: .3s ease;
-      }
+      // &::before {
+      //   position: absolute;
+      //   content: "\e71b";
+      //   font-family: $icon-font;
+      //   font-size: 14px;
+      //   left: 0;
+      //   top: 1px;
+      //   color: $primary-color;
+      //   transition: .3s ease;
+      // }
     }
   }
 
   table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-bottom: 1px solid #efefef;
+    border-color: #ebebeb;
+    margin: 1rem 0 2rem;
     text-align: left;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1rem;
 
-    border: 1px solid #dee2e6;
+    tr:nth-child(odd) {
+      background: #f8f8f8;
+    }
+
+    tr:first-child th, tr:first-child td {
+      border-color: #ebebeb;
+      border-top-style: solid;
+      border-top-width: 1px;
+    }
+
+    tr th:first-child, tr td:first-child {
+      border-color: #ebebeb;
+      border-left-style: solid;
+      border-left-width: 1px;
+    }
 
     th,
     td {
-      padding: .75rem;
-      vertical-align: top;
-      border: 1px solid #dee2e6
+      padding: 9px 12px;
+      border: 1px solid #ebebeb;
+      border-left: none;
+      border-top: none;
     }
 
     thead {
@@ -280,24 +297,49 @@
     }
 
     tbody {
-      background: $gray;
+      // background: $gray;
 
       td {
         text-align: left !important;
       }
     }
+
+    .tableblock {
+      margin: 0;
+    }
   }
 
 
-  blockquote {
-    padding: 20px;
-    background: $gray;
-    border-left: 3px solid $primary-color;
+  .quoteblock {
+    padding: 15px 20px 15px 55px;
+    position: relative;
+    font-style: italic;
+    font-family: $secondary-font;
+    margin: 0;
 
-    p {
-      margin-bottom: 0;
-      color: $text-color-dark;
-      font-style: italic !important;
+    &::before {
+      content: "\201C";
+      font-size: 3.750rem;
+      font-weight: bold;
+      color: inherit;
+      position: absolute;
+      left: 10px;
+      top: -3px;
+    }
+
+    blockquote {
+      font-size: 24px;
+      line-height: 1.5;
+      opacity: 0.9;
+      margin: 0 0 1.75rem;
+    }
+
+    .attribution {
+      text-align: end;
+
+      cite {
+        font-style: normal;
+      }
     }
   }
 
@@ -327,6 +369,37 @@
     border: 1px solid $border-color;
     border-radius: 3px;
     color: $text-color-dark;
+  }
+
+  .toc {
+    border: 1px solid $secondary-color;
+    padding: 1em;
+
+    #toctitle {
+      color: $secondary-color;
+      font-family: $secondary-font;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+  }
+
+  .verseblock {
+    text-align: center;
+    line-height: 2;
+    background: $gray;
+
+    .title {
+      font-size: 28px;
+      font-weight: 500;
+      color: $secondary-color;
+    }
+
+    .content {
+      font-family: $secondary-font;
+      font-style: italic;
+      white-space: pre-line;
+    }
   }
 
 }

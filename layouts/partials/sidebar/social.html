@@ -1,0 +1,8 @@
+<div class="widget">
+  <h4 class="widget-title">Follow Me</h4>
+  <ul class="list-inline social-links">
+    {{ range .Site.Params.social }}
+    <li class="list-inline-item"><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+    {{ end }}
+  </ul>
+</div>

@@ -3,10 +3,13 @@
   <div class="container">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
-      <a class="navbar-brand mobile-view" href="{{ .Site.BaseURL }}"><img class="img-fluid"
-          src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}"></a>
+      <a class="navbar-brand mobile-view" href="{{ .Site.BaseURL }}">
+          <img class="img-logo img-fluid"
+            srcset="{{ .Site.Params.logoRegular | absURL }} 1x, {{ .Site.Params.logoRetina | absURL }} 2x"
+            src="{{ .Site.Params.logoRegular | absURL }}" alt="{{ .Site.Title }}">
+      </a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
-        <i class="ti-menu h3"></i>
+        <i class="ti-menu navbar-burger"></i>
       </button>
 
       <div class="collapse navbar-collapse text-center" id="navigation">
@@ -20,8 +23,11 @@
           </ul>
         </div>
 
-        <a class="navbar-brand mx-auto desktop-view" href="{{ .Site.BaseURL }}"><img class="img-fluid"
-            src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}"></a>
+        <a class="navbar-brand mx-auto desktop-view" href="{{ .Site.BaseURL }}">
+          <img class="img-logo img-fluid"
+            srcset="{{ .Site.Params.logoRegular | absURL }} 1x, {{ .Site.Params.logoRetina | absURL }} 2x"
+            src="{{ .Site.Params.logoRegular | absURL }}" alt="{{ .Site.Title }}">
+        </a>
 
         <ul class="navbar-nav">
           {{ range .Site.Menus.main }}

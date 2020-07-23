@@ -1,4 +1,22 @@
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', '{{ .Site.GoogleAnalytics }}');
+  </script>
+  <!-- Google Analytics -->
+  <script>
+    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  <!-- End Google Analytics -->
+
   <meta charset="utf-8">
   <title>{{ .Site.Title }}</title>
 
@@ -18,7 +36,32 @@
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
   {{ "<!--Favicon-->" | safeHTML }}
-  <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
-  <link rel="icon" href="{{ `images/favicon.png` | absURL }} " type="image/x-icon">
+  <link rel="shortcut icon" href="{{ `images/favicon.ico` | absURL }} " type="image/x-icon">
+  <link rel="icon" href="{{ `images/favicon.ico` | absURL }} " type="image/x-icon">
+  <link rel="icon" type="image/png" href="{{ `images/favicon-32x32.png` | absURL }}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{ `images/favicon-16x16.png` | absURL }}" sizes="16x16" />
+  <link rel="icon" type="image/png" href="{{ `images/favicon-128.png` | absURL }}" sizes="128x128" />
+  <link rel="icon" type="image/png" href="{{ `images/favicon-196x196.png` | absURL }}" sizes="196x196" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ `images/apple-touch-icon-144x144.png` | absURL }}" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ `images/apple-touch-icon-152x152.png` | absURL }}" />
 
+  <link rel="preload" href="plugins/themify-icons/fonts/themify.woff?-fvbane" type="font/woff">
+
+  <meta name="application-name" content="The Blissful Aura" />
+
+  {{ "<!--SEO Optimization-->" | safeHTML }}
+  {{ partial "utils/seo_schema" . }}
+
+  <!-- https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates -->
+  {{ "<!--Opengraph-->" | safeHTML }}
+  {{ partial "utils/opengraph.html" . }}
+
+  {{ "<!--Schema-->" | safeHTML }}
+  {{ partial "utils/schema.html" . }}
+
+  {{ "<!--Twitter-->" | safeHTML }}
+  {{ partial "utils/twitter_cards.html" . }}
+
+  {{ "<!--Manifest-->" | safeHTML }}
+  <link rel="manifest" href="/manifest.json">
 </head>

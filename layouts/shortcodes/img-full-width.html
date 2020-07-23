@@ -1,0 +1,19 @@
+{{- $src := .Get "src" -}}
+{{- $cdn := .Site.Params.imageCDN -}}
+{{- $api := "https://861521513922253:Auggae2quep-M2Gjy9QcY7jTwXY@api.cloudinary.com/v1_1/technicallyspeaking/resources/image/upload/" -}}
+
+
+{{ $meta := getJSON $api $src }}
+
+<picture>
+  <source media="(min-width: 992px)"
+    srcset="{{$cdn}}w_730/{{ $src }} 1x, {{$cdn}}w_730,dpr_2.0/{{ $src }} 2x"
+    type="image/jpeg">
+  <source media=" (min-width: 768px)"
+    srcset="{{$cdn}}w_690/{{ $src }} 1x, {{$cdn}}w_690,dpr_2.0/{{ $src }} 2x"
+    type="image/jpeg">
+  <source media="(max-width: 576px)"
+    srcset="{{$cdn}}w_510/{{ $src }} 1x, {{$cdn}}w_510,dpr_2.0/{{ $src }} 2x"
+    type="image/jpeg">
+  <img loading="lazy" class="img-fluid" src="{{$cdn}}w_730/{{ $src }}" type="image/jpeg" alt="{{$meta.context.custom.alt}}">
+</picture>

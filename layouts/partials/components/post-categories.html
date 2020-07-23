@@ -1,0 +1,5 @@
+<div class="category-list">
+  {{ range .Params.Categories }}
+  <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}">{{ . | title | humanize }}</a>
+  {{ end }}
+</div>
