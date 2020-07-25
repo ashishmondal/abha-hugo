@@ -182,6 +182,25 @@ a:hover {
   font-weight: 500 !important;
 }
 
+.sectionbody > hr {
+  padding: 0;
+  border: none;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center;
+  margin: 2em 3em;
+
+  &:after {
+    content: "§";
+    color: $primary-color;
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+  }
+}
 /* form control */
 .form-control{
   height: 50px;

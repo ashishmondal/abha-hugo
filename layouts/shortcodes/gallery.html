@@ -1,6 +1,7 @@
 {{ $id := delimit (shuffle (seq 1 9)) "" }}
-<!-- ### start of the gallery definition ### -->
 <div class="justified-gallery"  >
   {{ .Inner }}
 </div>
-<!-- ### end of the gallery definition ### -->
+{{ with .Get "caption" }}
+<div class="gallery-caption">{{ . }}</div>
+{{ end }}

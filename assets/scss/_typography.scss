@@ -73,6 +73,13 @@ h6, .h6{
   }
 }
 
+figcaption, .gallery-caption {
+  font-family: $secondary-font;
+  font-style: italic;
+  text-align: center;
+  color: $primary-color;
+}
+
 .post-meta {
   font-family: $meta-font;
   text-transform: uppercase;

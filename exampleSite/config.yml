@@ -1,0 +1,125 @@
+######################## default configuration ####################
+baseURL: 'https://theblissfulaura.com'
+languageCode: en-in
+title: The Blissful Aura | Liberating a piece of my soul
+theme: abha-hugo
+themesdir: "../.."
+summaryLength: '10'
+disqusShortname: theblissfulaura
+googleAnalytics: UA-172749675-1
+enableInlineShortcodes: true
+paginate: 6
+social:
+  - facebook: theblissfulaura
+  - facebook_admin: theblissfulaura
+
+author:
+  displayname: Abha Mondal
+  facebook: theblissfulaura
+  twitter: abhachhavi
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+############################# Plugins ##############################
+params:
+  #### Opengraph ####
+  locale: en-in
+  title: The Blissful Aura | Liberating a piece of my soul
+  plugins:
+    css:
+      - URL: plugins/bootstrap/bootstrap.min.css
+      - URL: plugins/slick/slick.css
+      - URL: plugins/themify-icons/themify-icons.css
+      - URL: plugins/justifiedGallery/justifiedGallery.min.css
+      - URL: plugins/colorbox/colorbox.css
+      - URL: //cdn-images.mailchimp.com/embedcode/classic-10_7.css
+    js:
+      - URL: plugins/jQuery/jquery.min.js
+      - URL: plugins/bootstrap/bootstrap.min.js
+      - URL: plugins/slick/slick.min.js
+      - URL: plugins/search/fuse.min.js
+      - URL: plugins/search/mark.js
+      - URL: plugins/search/search.js
+      - URL: plugins/disqus/jquery.disqusloader.js
+      - URL: plugins/justifiedGallery/jquery.justifiedGallery.min.js
+      - URL: plugins/colorbox/jquery.colorbox-min.js
+      - URL: plugins/lazysizes/lazysizes.min.js
+  logo: images/logo.png
+  logoRegular: images/logo-regular.png
+  logoRetina: images/logo-retina.png
+  logoBig: images/logo-big.png
+  home: Home
+  imageCDN: ''
+  description: The Blissful Auta - Liberating a Piece of my Soul
+  author: Abha Mondal
+  # googleAnalitycsID: Your ID
+  termlyId: d0266af1-038a-4a07-b838-019cd5d88167
+  mailChimp:
+    id: 7b67e2c984
+    user: 31db5d4825cf573a78e24ce6f
+    site: theblissfulaura.us10
+  location: 'Oxford, UK'
+  copyright: >-
+    | copyright &copy; 2020 [Abha Mondal](https://theblissfulaura.com) All
+    Rights Reserved |
+  preloader:
+    enable: true
+    preloader: >-
+      images/logo-square-transparent.png
+  search:
+    enable: true
+  social:
+    - title: facebook
+      icon: ti-facebook
+      link: 'https://facebook.com/theblissfulaura'
+    - title: twitter
+      icon: ti-twitter-alt
+      link: 'https://twitter.com/abhachhavi'
+    - title: instagram
+      icon: ti-instagram
+      link: 'https://www.instagram.com/theblissfulaura'
+    - title: youtube
+      icon: ti-youtube
+      link: 'https://www.youtube.com/channel/UCLxYRhpt1o_kCR-GCObOrEg'
+    - title: linkedin
+      icon: ti-linkedin
+      link: 'https://www.linkedin.com/in/abha10/'
+
+### SEO ###
+enableRobotsTXT: true
+canonifyURLs: true
+
+############################## navigation ###############################
+menu:
+  main:
+    - name: About
+      URL: about
+      weight: 1
+    - name: Blog
+      URL: blog
+      weight: 2
+  footer:
+    - name: About
+      URL: about
+      weight: 1
+    - name: Blog
+      URL: blog
+      weight: 2
+    - name: Privacy Policy
+      URL: privacy-policy
+      weight: 3
+
+### Related ###
+related:
+  threshold: 70
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 80

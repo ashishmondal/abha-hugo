@@ -1,7 +1,11 @@
 <div class="col-lg-4">
+  {{ if not .IsPage }}
   {{ partial "sidebar/about.html" .}}
+  {{ end }}
   {{ partial "sidebar/social.html" .}}
+  {{ if .IsPage }}
   {{ partial "sidebar/recent.html" .}}
+  {{ end }}
   {{ partial "sidebar/signup.html" .}}
   {{ partial "sidebar/category.html" .}}
 </div>
