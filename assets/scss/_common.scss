@@ -201,6 +201,18 @@ a:hover {
     background: white;
   }
 }
+
+.sidebarblock {
+  border: 1px solid $secondary-color;
+  padding: 1em;
+  margin: 2em;
+  font-style: italic;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
 /* form control */
 .form-control{
   height: 50px;
