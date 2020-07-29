@@ -213,6 +213,17 @@ a:hover {
   }
 }
 
+.ulist {
+  &.checked li {
+    :before {
+      font-family: 'themify';
+      content: "\e64d";
+      padding-right: 0.5rem;
+      color: $primary-color;
+    }
+  }
+}
+
 /* form control */
 .form-control{
   height: 50px;
